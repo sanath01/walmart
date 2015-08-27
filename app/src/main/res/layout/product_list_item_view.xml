@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/product_list_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="horizontal">
+
+
+    <FrameLayout
+        android:id="@+id/image_layout"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerVertical="true"
+        android:layout_gravity="left">
+
+        <ImageView
+            android:id="@+id/product_image_list_view"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:layout_gravity="center" />
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/product_title_list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_toEndOf="@+id/image_layout"
+        android:layout_toLeftOf="@+id/price_list_view"
+        android:layout_toRightOf="@+id/image_layout"
+        android:text="Large Text"
+        android:textSize="20sp" />
+
+    <RatingBar
+        android:id="@+id/rating_bar_list_view"
+        style="?android:attr/ratingBarStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/product_title_list_view"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/image_layout"
+        android:isIndicator="true"
+        android:numStars="5" />
+
+    <TextView
+        android:id="@+id/price_list_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:gravity="end"
+        android:paddingLeft="5dp"
+        android:paddingRight="20dp"
+        android:text="Small Text"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:textColor="@color/orange" />
+
+
+</RelativeLayout>

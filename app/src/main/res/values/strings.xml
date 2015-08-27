@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Walmart Test</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="action_filter">Filter</string>
+    <string name="action_goto">Go To</string>
+    <string name="title_activity_product_detail">ProductDetailActivity</string>
+
+    <string name="price_tag">Online Price</string>
+    <string name="add_to_cart">Add To Cart</string>
+    <string name="description">Item Description:</string>
+</resources>
