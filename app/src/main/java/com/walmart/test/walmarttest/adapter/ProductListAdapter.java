@@ -54,21 +54,32 @@ public class ProductListAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
+        ViewHolderItem viewHolder;
         if (view == null) {
             view = layoutInflater.inflate(R.layout.product_list_item_view, viewGroup, false);
+            viewHolder= new ViewHolderItem();
+            viewHolder.productTitle=(TextView) view.findViewById(R.id.product_title_list_view);
+            viewHolder.thumbImage = (ImageView) view.findViewById(R.id.product_image_list_view);
+            viewHolder.productPrice = (TextView) view.findViewById(R.id.price_list_view);
+            viewHolder.ratingBar = (RatingBar) view.findViewById(R.id.rating_bar_list_view);
+            view.setTag(viewHolder);
+        }else{
+            viewHolder=(ViewHolderItem) view.getTag();
         }
 
-        TextView productTitle = (TextView) view.findViewById(R.id.product_title_list_view);
-        ImageView thumbImage = (ImageView) view.findViewById(R.id.product_image_list_view);
-        TextView productPrice = (TextView) view.findViewById(R.id.price_list_view);
-        RatingBar ratingBar = (RatingBar) view.findViewById(R.id.rating_bar_list_view);
-
         Product product = productList.get(i);
-        productTitle.setText(product.getProductName());
-        Picasso.with(context).load(product.getProductImage()).into(thumbImage);
-        productPrice.setText(product.getPrice());
-        ratingBar.setRating(product.getReviewRating());
+        viewHolder.productTitle.setText(product.getProductName());
+        Picasso.with(context).load(product.getProductImage()).into(viewHolder.thumbImage);
+        viewHolder.productPrice.setText(product.getPrice());
+        viewHolder.ratingBar.setRating(product.getReviewRating());
 
         return view;
+    }
+
+    static class  ViewHolderItem{
+        TextView productTitle;
+        ImageView thumbImage;
+        TextView productPrice;
+        RatingBar ratingBar;
     }
 }
